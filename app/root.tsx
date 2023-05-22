@@ -10,8 +10,13 @@ import {
 
 import type { LinksFunction } from "@remix-run/node";
 
+import load_fonts from "~/styles/load_fonts.css";
+import styles from "~/styles/root.css";
+
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
+  { rel: "stylesheet", href: load_fonts },
+  { rel: "stylesheet", href: styles },
 ];
 
 export default function App() {
